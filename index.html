@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8"><meta name="color-scheme" content="light only"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>PAO AND BREW — Kasir (Sama Persis Artefak)</title>
+<style>
+
+/* PAKSA TERANG - ANTI DARK MODE HP */
+html{color-scheme:light only !important;forced-color-adjust:none !important;-webkit-forced-color-adjust:none !important}
+html,body{background:#FFF8EE !important;color:#0F3D2E !important}
+*{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif !important;font-style:normal !important;letter-spacing:normal !important}
+@media (prefers-color-scheme:dark){
+  html,body{background:#FFF8EE !important;color:#0F3D2E !important}
+  .card,.paket,.item,.cart,.bottom,.pill,.search,input,select{background:#ffffff !important;color:#0F3D2E !important;border-color:#E8DCC8 !important}
+  header{background:#0F3D2E !important;color:#fff !important}
+  .banner{background:linear-gradient(135deg,#C65D1A,#E67E22) !important;color:#fff !important}
+  .btn-o{background:#E67E22 !important;color:#fff !important}
+  .btn-g{background:#0F3D2E !important;color:#fff !important}
+  .btn-light{background:#FFF1E6 !important;color:#6B3F1D !important}
+}
+
+:root{--green:#0F3D2E;--green2:#145A43;--brown:#6B3F1D;--brown2:#8B5A2B;--orange:#C65D1A;--orange2:#E67E22;--cream:#FFF8EE;--line:#E8DCC8;--ink:#0F3D2E;--mut:#6B7280}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--cream);color:var(--ink);overflow-x:hidden}
+header{background:var(--green);color:#fff;padding:12px 14px;display:flex;gap:11px;align-items:center;position:sticky;top:0;z-index:30;box-shadow:0 2px 10px rgba(0,0,0,.18)}
+.logo{width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+header h1{font-size:17px;margin:0;letter-spacing:.3px}header p{margin:3px 0 0;font-size:11px;opacity:.9}
+.topbar{display:flex;gap:8px;padding:10px 12px 0}
+.pill{flex:1;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:9px;text-align:center;font-size:12px;font-weight:800}
+.pill b{display:block;font-size:15px;color:var(--green)}
+.banner{margin:12px;background:linear-gradient(135deg,#C65D1A,#E67E22);color:#fff;border-radius:16px;padding:13px 14px;box-shadow:0 4px 14px rgba(198,93,26,.25)}
+.banner b{font-size:13px}.banner small{opacity:.95}
+.banner label{display:flex;gap:8px;align-items:center;margin-top:9px;background:rgba(255,255,255,.22);padding:9px 10px;border-radius:10px;font-size:12px;font-weight:700}
+.banner input{width:19px;height:19px;accent-color:#0F3D2E}
+.wrap{padding:0 12px 230px}
+.cats{display:flex;gap:7px;overflow-x:auto;padding:4px 0}
+.cats button{white-space:nowrap;border:1.5px solid var(--line);background:#fff;color:var(--ink);padding:9px 14px;border-radius:999px;font-size:12px;font-weight:800}
+.cats button.on{background:var(--green);color:#fff;border-color:var(--green)}
+.search{width:100%;padding:12px 13px;border:1.5px solid var(--line);border-radius:12px;font-size:13px;background:#fff;margin:8px 0 2px;outline:none}
+.search:focus{border-color:var(--orange)}
+.sec{font-size:15px;font-weight:900;margin:16px 0 8px;display:flex;justify-content:space-between;align-items:center}
+.sec span{font-size:11px;color:var(--mut);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.card{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:10px 8px;text-align:left;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.04);min-height:112px;display:flex;flex-direction:column;justify-content:space-between}
+.card:active{transform:scale(.97)} .card .em{font-size:24px} .card .nm{font-size:12.5px;font-weight:900;color:#0F3D2E;line-height:1.25;min-height:32px} .card .pr{font-size:13px;font-weight:900;color:#0F3D2E} .card .st{font-size:10.5px;color:#8B5A2B;font-weight:700} .card .code{font-size:9px;color:#9CA3AF;font-weight:700}
+.paket{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:12px;margin-bottom:9px}
+.paket b{color:#0F3D2E;font-size:13.5px}.paket p{margin:4px 0;font-size:12px;color:#5C3A1A}
+.badge{background:#C65D1A;color:#fff;font-size:10px;padding:3px 8px;border-radius:99px;font-weight:900}
+strike{color:#9CA3AF}
+.btn{width:100%;padding:12px;border:0;border-radius:12px;font-weight:900;font-size:13.5px;cursor:pointer}
+.btn-o{background:var(--orange2);color:#fff}.btn-g{background:var(--green);color:#fff}.btn-light{background:#FFF1E6;color:#6B3F1D}.btn-red{background:#D92D20;color:#fff}.btn:active{transform:scale(.98)}
+.cart{position:fixed;left:0;right:0;bottom:58px;background:#fff;border-top:2.5px solid var(--green);padding:10px 12px 12px;max-height:225px;overflow:auto;box-shadow:0 -6px 20px rgba(0,0,0,.12);z-index:25}
+.cart h3{margin:0 0 6px;font-size:13px;display:flex;justify-content:space-between}
+.row{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;padding:4px 0;border-bottom:1px dashed #F0E6D6}
+.row button{width:28px;height:28px;border-radius:9px;border:1px solid #E5DCCB;background:#fff;font-weight:900}
+.total{font-size:18px;font-weight:900;display:flex;justify-content:space-between;margin:6px 0}
+input,select{width:100%;padding:11px;border:1.5px solid var(--line);border-radius:11px;font-size:13px;background:#fff;margin:5px 0;outline:none}
+.flex{display:flex;gap:7px}.flex>*{flex:1}
+.bottom{position:fixed;left:0;right:0;bottom:0;background:#fff;display:flex;border-top:1px solid var(--line);z-index:30;padding-bottom:env(safe-area-inset-bottom)}
+.bottom button{flex:1;background:none;border:0;padding:7px 2px 6px;font-size:10px;color:#6B3F1D;font-weight:700}.bottom button.on{color:#0F3D2E}
+.bottom span{font-size:18px;display:block}
+.item{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:12px;margin:8px 0}
+.item b{color:#0F3D2E}.item p{margin:4px 0;font-size:12px;color:#5C3A1A}
+.muted{font-size:11px;color:#6B7280}
+a.wa{display:block;text-align:center;background:#1FA855;color:#fff;padding:12px;border-radius:12px;font-weight:900;text-decoration:none;margin-top:8px;font-size:13px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:80px;background:#0F3D2E;color:#fff;padding:10px 14px;border-radius:999px;font-size:12px;font-weight:800;z-index:99;display:none}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:flex-end;justify-content:center;z-index:50}
+.modal.open{display:flex}.sheet{background:#fff;width:100%;max-width:520px;border-radius:20px 20px 0 0;padding:16px;max-height:88vh;overflow:auto}
+</style>
+<style>
+header{padding:14px 14px !important}
+.logo{width:46px;height:46px !important;font-size:28px !important}
+.cats button{padding:10px 15px !important}
+.card{min-height:118px !important}
+.paket{padding:14px !important}
+.cart{padding:12px 14px 14px !important}
+.bottom button{padding:8px 2px 7px !important}
+</style>
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0F3D2E"><link rel="apple-touch-icon" href="icon.png"><script>if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("./sw.js").catch(()=>{});});}</script></head><body>
+<header><div class="logo">☕</div><div><h1>PAO AND BREW</h1><p id="dateStr">Kasir siap</p></div><div style="margin-left:auto;text-align:right"><div style="font-size:11px;opacity:.9">File HTML</div><div style="font-size:11px;font-weight:800">Offline ✓</div></div></header>
+
+<div id="page-kasir">
+<div class="topbar"><div class="pill">Omzet Hari Ini<b id="omzetTop">Rp 0</b></div><div class="pill">Transaksi<b id="trxTop">0</b></div><div class="pill">Bahan Menipis<b id="bahanTop">0</b></div></div>
+<div class="banner">🎁 <b>DISKON 1K! Pesan pakai FULL BAHASA INGGRIS, dapat potongan Rp 1.000 / transaksi!</b><br><small>Aktifkan di bawah sebelum bayar — otomatis masuk struk.</small><label><input type="checkbox" id="diskonEng"> Aktifkan Diskon Full English -Rp 1.000</label></div>
+<div class="wrap">
+<div class="cats" id="cats"><button class="on" data-c="Semua">Semua</button><button data-c="Minuman">☕ Minuman</button><button data-c="Makanan">🥟 Makanan</button><button data-c="Paket">🎁 Paket Hemat</button></div>
+<input class="search" id="cariProduk" placeholder="🔍 Cari produk... contoh: Aren">
+<input class="search" id="barcode" placeholder="⌨️ Kode barcode... contoh: AREN lalu Enter">
+<div class="sec">Menu <span>Tap untuk tambah</span></div><div class="grid" id="grid"></div>
+<div class="sec">Paket Hemat <span>Sudah Diskon 2K</span></div><div id="paket"></div>
+<div class="sec">Pelanggan</div>
+<select id="pilihPelanggan"><option value="">-- Pelanggan Umum --</option></select>
+<input id="noWa" placeholder="No WA Pelanggan 62812xxxxxxx">
+<p class="muted">Struk WA akan dikirim ke nomor ini. Jika kosong, pakai nomor toko.</p>
+</div>
+<div class="cart"><h3>🧾 Keranjang <span id="jml"></span></h3><div id="cartList"></div>
+<div class="row"><span>Subtotal</span><b id="sub">Rp 0</b></div>
+<div class="row" id="rowDiskon" style="display:none"><span>Diskon Full English</span><b style="color:#D92D20">-Rp 1.000</b></div>
+<div class="total"><span>TOTAL</span><span id="total">Rp 0</span></div>
+<select id="bayarMetode"><option>Tunai</option><option>QRIS</option><option>Transfer</option></select>
+<input id="uang" type="number" placeholder="Uang diterima (Tunai)">
+<div class="row"><span>Kembalian</span><b id="kembali">Rp 0</b></div>
+<div class="flex"><button class="btn btn-light" onclick="setUang(50000)">Rp 50rb</button><button class="btn btn-light" onclick="setUang(100000)">Rp 100rb</button><button class="btn btn-light" onclick="uangPas()">Uang Pas</button></div>
+<button class="btn btn-o" style="margin-top:8px;font-size:15px;padding:14px" onclick="bayar()">BAYAR • Selesaikan Transaksi</button>
+<div id="strukArea"></div>
+</div></div>
+
+<div id="page-lain" style="display:none"><div class="wrap" style="padding-bottom:80px">
+<div id="view-produk"></div><div id="view-bahan"></div><div id="view-laporan"></div><div id="view-pelanggan"></div><div id="view-kas"></div>
+</div></div>
+
+<div class="bottom">
+<button class="on" onclick="show('kasir',this)"><span>🛒</span>Kasir</button><button onclick="show('produk',this)"><span>📦</span>Produk</button><button onclick="show('bahan',this)"><span>🧺</span>Stok Bahan</button><button onclick="show('laporan',this)"><span>📊</span>Laporan</button><button onclick="show('pelanggan',this)"><span>👥</span>Pelanggan</button><button onclick="show('kas',this)"><span>💰</span>Kas</button>
+</div>
+<div class="toast" id="toast"></div>
+<div class="modal" id="modal"><div class="sheet" id="sheet"></div></div>
+<script>
+let S=JSON.parse(localStorage.getItem('pao_v2')||'null');
+if(!S){S={produk:[
+{id:'AME',nama:'Americano',harga:12000,stok:30,kat:'Minuman',em:'☕'},
+{id:'LAT',nama:'Cafe Latte',harga:14000,stok:30,kat:'Minuman',em:'☕'},
+{id:'AREN',nama:'Aren Latte',harga:16000,stok:25,kat:'Minuman',em:'🧋'},
+{id:'BUT',nama:'Butterscotch Latte',harga:16000,stok:25,kat:'Minuman',em:'🧋'},
+{id:'MAT',nama:'Matcha Latte',harga:16000,stok:25,kat:'Minuman',em:'🍵'},
+{id:'THAI',nama:'Thai Tea',harga:13000,stok:25,kat:'Minuman',em:'🥤'},
+{id:'BAKPAO',nama:'Bakpao Ayam',harga:7000,stok:40,kat:'Makanan',em:'🥟'},
+{id:'ONDE',nama:'Onde Onde',harga:2000,stok:50,kat:'Makanan',em:'🍡'}],
+paket:[
+{nama:'Paket 1 — Aren / Butterscotch + Bakpao + Onde',harga:23000,normal:25000,desc:'1 minuman + 1 Bakpao + 1 Onde • Pilih Aren atau Butterscotch',pilihan:['AREN','BUT']},
+{nama:'Paket 2 — Matcha + Bakpao + Onde',harga:23000,normal:25000,desc:'Matcha Latte + Bakpao + Onde',pilihan:['MAT']},
+{nama:'Paket 3 — Thai Tea + Bakpao + Onde',harga:20000,normal:22000,desc:'Thai Tea + Bakpao + Onde',pilihan:['THAI']}],
+bahan:[
+{nama:'Biji Kopi',stok:5000,sat:'gram',min:500},{nama:'Susu Fresh Milk',stok:10000,sat:'ml',min:1000},{nama:'Gula Aren Cair',stok:3000,sat:'ml',min:300},{nama:'Saus Butterscotch',stok:2000,sat:'ml',min:200},{nama:'Bubuk Matcha',stok:1000,sat:'gram',min:100},{nama:'Teh Thai',stok:1000,sat:'gram',min:100},{nama:'Bakpao Frozen',stok:100,sat:'pcs',min:10},{nama:'Onde Frozen',stok:150,sat:'pcs',min:15},{nama:'Cup / Gelas',stok:200,sat:'pcs',min:20}],
+pelanggan:[{nama:'Budi',wa:'6281234567890',kunj:0,total:0}],trans:[],modal:0,masuk:0,keluar:0};save();}
+let cart=[],cat='Semua';
+function save(){localStorage.setItem('pao_v2',JSON.stringify(S))}
+function rp(n){return 'Rp '+Number(n||0).toLocaleString('id-ID')}
+function toast(m){let t=document.getElementById('toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',2200)}
+function render(){
+document.getElementById('dateStr').textContent=new Date().toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+let om=S.trans.reduce((a,t)=>a+t.total,0);document.getElementById('omzetTop').textContent=rp(om);document.getElementById('trxTop').textContent=S.trans.length;document.getElementById('bahanTop').textContent=S.bahan.filter(b=>b.stok<=b.min).length;
+let q=(document.getElementById('cariProduk').value||'').toLowerCase();
+let g=document.getElementById('grid');g.innerHTML='';
+S.produk.filter(p=>(cat==='Semua'||p.kat===cat||(cat==='Paket'&&false))&&(p.nama.toLowerCase().includes(q)||p.id.toLowerCase().includes(q))).forEach(p=>{
+let d=document.createElement('div');d.className='card';d.innerHTML=`<div class="em">${p.em}</div><div class="nm">${p.nama}</div><div><div class="pr">${rp(p.harga)}</div><div class="st">Stok ${p.stok}</div><div class="code">${p.id}</div></div>`;d.onclick=()=>add(p.id,1,p.nama,p.harga);g.appendChild(d);});
+let pk=document.getElementById('paket');pk.innerHTML='';
+S.paket.forEach((p,i)=>{let d=document.createElement('div');d.className='paket';d.innerHTML=`<span class="badge">HEMAT 2K</span> <b>${p.nama}</b><p>${p.desc}</p><p><strike>${rp(p.normal)}</strike> <b style="font-size:15px">${rp(p.harga)}</b></p><button class="btn btn-o" onclick="addPaket(${i})">+ Tambah Paket</button>`;pk.appendChild(d);});
+let sel=document.getElementById('pilihPelanggan');let cur=sel.value;sel.innerHTML='<option value="">-- Pelanggan Umum --</option>'+S.pelanggan.map((p,i)=>`<option value="${i}">${p.nama} — ${p.wa||'Tanpa No WA'}</option>`).join('');sel.value=cur;
+let cl=document.getElementById('cartList');cl.innerHTML=cart.map((c,i)=>`<div class="row"><span><b>${c.nama}</b> • ${rp(c.harga)}</span><span><button onclick="ubah(${i},-1)">−</button> ${c.qty} <button onclick="ubah(${i},1)">+</button> • <b>${rp(c.harga*c.qty)}</b></span></div>`).join('')||'<div class="muted">Keranjang masih kosong — tap produk untuk tambah.</div>';
+let sub=cart.reduce((a,c)=>a+c.harga*c.qty,0);let disc=document.getElementById('diskonEng').checked&&cart.length?1000:0;
+document.getElementById('rowDiskon').style.display=disc?'flex':'none';
+document.getElementById('sub').textContent=rp(sub);document.getElementById('total').textContent=rp(sub-disc);document.getElementById('jml').textContent='('+cart.reduce((a,c)=>a+c.qty,0)+' item)';
+let uang=Number(document.getElementById('uang').value||0);document.getElementById('kembali').textContent=rp(Math.max(0,uang-(sub-disc)));
+renderLain();
+}
+function add(id,q,n,h){let f=cart.find(c=>c.id===id);if(f)f.qty+=q;else cart.push({id,nama:n,harga:h,qty:q});render();}
+function addPaket(i){let p=S.paket[i];let pilih=p.pilihan[0];if(p.pilihan.length>1){let v=prompt('Pilih minuman paket:\nKetik AREN atau BUT','AREN');if(v&&['AREN','BUT'].includes(v.toUpperCase()))pilih=v.toUpperCase();}
+cart.push({id:'PAKET'+i,nama:p.nama,harga:p.harga,qty:1,paket:i,pil:pilih});toast('Paket ditambahkan');render();}
+function ubah(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);render();}
+function setUang(n){document.getElementById('uang').value=n;render();}
+function uangPas(){let sub=cart.reduce((a,c)=>a+c.harga*c.qty,0);let disc=document.getElementById('diskonEng').checked?1000:0;document.getElementById('uang').value=Math.max(0,sub-disc);render();}
+function kurangiBahan(id){let m={AME:[['Biji Kopi',15],['Cup / Gelas',1]],LAT:[['Biji Kopi',15],['Susu Fresh Milk',150],['Cup / Gelas',1]],AREN:[['Biji Kopi',15],['Susu Fresh Milk',120],['Gula Aren Cair',30],['Cup / Gelas',1]],BUT:[['Biji Kopi',15],['Susu Fresh Milk',120],['Saus Butterscotch',25],['Cup / Gelas',1]],MAT:[['Bubuk Matcha',15],['Susu Fresh Milk',150],['Cup / Gelas',1]],THAI:[['Teh Thai',15],['Susu Fresh Milk',100],['Cup / Gelas',1]],BAKPAO:[['Bakpao Frozen',1]],ONDE:[['Onde Frozen',1]]};(m[id]||[]).forEach(([nm,j])=>{let b=S.bahan.find(x=>x.nama===nm);if(b)b.stok=Math.max(0,b.stok-j);});}
+function bayar(){
+if(!cart.length)return alert('Keranjang kosong');
+let sub=cart.reduce((a,c)=>a+c.harga*c.qty,0);let disc=document.getElementById('diskonEng').checked?1000:0;let total=sub-disc;let met=document.getElementById('bayarMetode').value;let uang=Number(document.getElementById('uang').value||0);
+if(met==='Tunai'&&uang<total)return alert('Uang kurang! Kembalian belum cukup.');
+cart.forEach(c=>{let p=S.produk.find(x=>x.id===c.id);if(p)p.stok=Math.max(0,p.stok-c.qty);if(c.paket!==undefined){kurangiBahan(c.pil);kurangiBahan('BAKPAO');kurangiBahan('ONDE');}else kurangiBahan(c.id);});
+let pi=document.getElementById('pilihPelanggan').value;let namaP='Pelanggan Umum';let wa=document.getElementById('noWa').value||'6281234567890';
+if(pi!==''){let pl=S.pelanggan[Number(pi)];pl.kunj++;pl.total+=total;namaP=pl.nama;if(pl.wa)wa=pl.wa;}
+let no='TRX'+String(S.trans.length+1).padStart(3,'0');let kembali=Math.max(0,uang-total);
+S.trans.unshift({no,tgl:new Date().toLocaleString('id-ID'),items:cart.map(c=>c.nama+' x'+c.qty).join(', '),total,met,pel:namaP,wa});
+if(met==='Tunai')S.masuk+=total;save();
+let teks=`PAO AND BREW\nStruk ${no}\n${new Date().toLocaleString('id-ID')}\n---\n${cart.map(c=>c.nama+' x'+c.qty+' = '+rp(c.harga*c.qty)).join('\n')}\n---\nSubtotal: ${rp(sub)}${disc?'\nDiskon Full English: -Rp 1.000':''}\nTotal: ${rp(total)}\nBayar: ${rp(uang)}\nKembalian: ${rp(kembali)}\nMetode: ${met}\nTerima kasih!`;
+let waBersih=wa.replace(/[^0-9]/g,'');if(waBersih.startsWith('0'))waBersih='62'+waBersih.slice(1);
+document.getElementById('strukArea').innerHTML=`<div class="item"><b>✅ Berhasil! ${no}</b><p>Total ${rp(total)} • Kembalian ${rp(kembali)} • ${met}</p><p class="muted">No WA Tujuan — bisa diedit:</p><input id="waTujuan" value="${waBersih}" oninput="updWa(this.value)"><a class="wa" id="linkWa" href="https://wa.me/${waBersih}?text=${encodeURIComponent(teks)}" target="_blank">💬 Buka WhatsApp & Kirim Struk</a><button class="btn btn-light" onclick="salinStruk()">📋 Salin Teks Struk</button><p class="muted">Di WhatsApp, teks sudah terisi. Tinggal pencet Kirim ▶️</p></div>`;
+window._teksStruk=teks;
+cart=[];document.getElementById('uang').value='';render();toast('Transaksi berhasil');
+}
+function updWa(v){let l=document.getElementById('linkWa');if(!l)return;let b=v.replace(/[^0-9]/g,'');if(b.startsWith('0'))b='62'+b.slice(1);l.href='https://wa.me/'+b+'?text='+encodeURIComponent(window._teksStruk||'');}
+function salinStruk(){navigator.clipboard.writeText(window._teksStruk||'').then(()=>toast('Struk tersalin! Tempel di WhatsApp')).catch(()=>alert('Gagal salin, salin manual dari layar'));}
+function show(m,el){document.querySelectorAll('.bottom button').forEach(b=>b.classList.remove('on'));el.classList.add('on');if(m==='kasir'){document.getElementById('page-kasir').style.display='block';document.getElementById('page-lain').style.display='none';}else{document.getElementById('page-kasir').style.display='none';document.getElementById('page-lain').style.display='block';['produk','bahan','laporan','pelanggan','kas'].forEach(k=>document.getElementById('view-'+k).style.display=k===m?'block':'none');}render();}
+function renderLain(){
+let om=S.trans.reduce((a,t)=>a+t.total,0);
+document.getElementById('view-produk').innerHTML=`<div class="sec">📦 Produk</div>`+S.produk.map((p,i)=>`<div class="item"><b>${p.em} ${p.nama}</b><p>${rp(p.harga)} • Stok ${p.stok} • Kode ${p.id}</p><div class="flex"><button class="btn btn-light" onclick="tambahStok(${i})">+ Stok</button><button class="btn btn-light" onclick="editHarga(${i})">Edit Harga</button></div></div>`).join('');
+document.getElementById('view-bahan').innerHTML=`<div class="sec">🧺 Stok Bahan <span>Otomatis berkurang</span></div>`+S.bahan.map((b,i)=>`<div class="item"><b>${b.nama}</b><p>Stok <b>${b.stok} ${b.sat}</b> • Min ${b.min} ${b.sat} ${b.stok<=b.min?'<span style="color:#D92D20;font-weight:900">• MENIPIS</span>':'• Aman'}</p><div class="flex"><button class="btn btn-light" onclick="bahanUbah(${i},10)">+ Tambah</button><button class="btn btn-light" onclick="bahanUbah(${i},-10)">− Pakai</button></div></div>`).join('');
+document.getElementById('view-laporan').innerHTML=`<div class="sec">📊 Laporan</div><div class="item"><b>Omzet Total: ${rp(om)}</b><p>Transaksi: ${S.trans.length} • Produk Terlaris: ${topProduk()}</p></div><button class="btn btn-red" onclick="resetTrans()">Reset Transaksi ke 0</button><div class="sec">Riwayat Transaksi</div>`+(S.trans.map(t=>`<div class="item"><b>${t.no} • ${rp(t.total)}</b><p>${t.tgl} • ${t.met} • ${t.pel}</p><p>${t.items}</p><a class="wa" href="https://wa.me/${(t.wa||'').replace(/[^0-9]/g,'')}?text=${encodeURIComponent('PAO AND BREW\nStruk '+t.no+'\n'+t.items+'\nTotal: '+rp(t.total))}" target="_blank">Kirim Ulang via WA</a></div>`).join('')||'<p class="muted">Belum ada transaksi</p>');
+document.getElementById('view-pelanggan').innerHTML=`<div class="sec">👥 Pelanggan</div><div class="item"><b>🔍 Cari Nomor lewat Nama</b><input id="cariPel" placeholder="Ketik nama... contoh: Budi" oninput="renderPelangganList()"><p class="muted">Ketik sebagian nama saja, nomor langsung muncul.</p></div><div id="listPel"></div><button class="btn btn-g" onclick="tambahPel()">+ Tambah Pelanggan</button><div style="height:8px"></div><button class="btn btn-light" onclick="hapusBanyak()">🗑️ Hapus Banyak Pelanggan</button>`;
+renderPelangganList();
+document.getElementById('view-kas').innerHTML=`<div class="sec">💰 Rekap Kas</div><div class="item"><b>Saldo: ${rp(S.modal+S.masuk-S.keluar)}</b><p>Modal ${rp(S.modal)} • Masuk ${rp(S.masuk)} • Keluar ${rp(S.keluar)}</p></div><input id="modalIn" type="number" placeholder="Modal awal hari"><button class="btn btn-g" onclick="S.modal=Number(document.getElementById('modalIn').value||0);save();render();toast('Modal tersimpan')">Simpan Modal</button><div style="height:8px"></div><input id="keluarIn" type="number" placeholder="Uang keluar"><button class="btn btn-light" onclick="S.keluar+=Number(document.getElementById('keluarIn').value||0);save();render();toast('Uang keluar tercatat')">Catat Uang Keluar</button><div style="height:14px"></div><button class="btn btn-red" onclick="if(prompt('Ketik RESET untuk reset semua')==='RESET'){localStorage.removeItem('pao_v2');location.reload();}">Reset Semua Data</button>`;
+}
+function topProduk(){if(!S.trans.length)return '-';return S.trans[0].items;}
+function renderPelangganList(){let el=document.getElementById('listPel');if(!el)return;let q=(document.getElementById('cariPel')?.value||'').toLowerCase();let list=S.pelanggan.filter(p=>p.nama.toLowerCase().includes(q));el.innerHTML=(list.map((p)=>{let idx=S.pelanggan.indexOf(p);return `<div class="item"><b style="font-size:15px">${p.nama}</b><p style="font-size:18px;font-weight:900;color:#6B3F1D">${p.wa||'Tidak ada No WA'}</p><p>Kunjungan ${p.kunj} • Total ${rp(p.total)}</p><div class="flex"><button class="btn btn-light" onclick="salin('${p.wa||''}')">📋 Salin Nomor</button><button class="btn btn-light" onclick="editPel(${idx})">✏️ Edit</button><button class="btn btn-light" onclick="hapusPel(${idx})">🗑️ Hapus</button></div>${p.wa?`<a class="wa" href="https://wa.me/${p.wa}" target="_blank">Chat WA</a>`:''}</div>`}).join(''))||'<p class="muted">Tidak ada pelanggan bernama itu.</p>';}
+function salin(t){if(!t)return alert('Tidak ada nomor');navigator.clipboard.writeText(t).then(()=>toast('Nomor tersalin: '+t));}
+function tambahPel(){let n=prompt('Nama pelanggan:');if(!n)return;let w=prompt('No WA 62812xxx (boleh kosong):')||'';S.pelanggan.push({nama:n,wa:w,kunj:0,total:0});save();render();toast('Pelanggan ditambahkan');}
+function editPel(i){let p=S.pelanggan[i];let n=prompt('Edit nama:',p.nama);if(!n)return;let w=prompt('Edit No WA (kosongkan untuk hapus nomor):',p.wa||'');p.nama=n;p.wa=w||'';save();render();toast('Nama pelanggan berhasil diubah');}
+function hapusPel(i){if(!confirm('Hapus pelanggan '+S.pelanggan[i].nama+'?'))return;S.pelanggan.splice(i,1);save();render();}
+function hapusBanyak(){let names=prompt('Ketik nama yang mau dihapus, pisahkan koma. Contoh: Budi, Andi');if(!names)return;let arr=names.split(',').map(s=>s.trim().toLowerCase());if(prompt('Ketik HAPUS untuk konfirmasi')!=='HAPUS')return;S.pelanggan=S.pelanggan.filter(p=>!arr.includes(p.nama.toLowerCase()));save();render();toast('Pelanggan berhasil dihapus');}
+function tambahStok(i){let n=Number(prompt('Tambah berapa?',10)||0);S.produk[i].stok+=n;save();render();}
+function editHarga(i){let n=Number(prompt('Harga baru:',S.produk[i].harga)||0);if(n)S.produk[i].harga=n;save();render();}
+function bahanUbah(i,d){S.bahan[i].stok=Math.max(0,S.bahan[i].stok+d);save();render();}
+function resetTrans(){if(prompt('Ketik RESET untuk reset transaksi ke 0')!=='RESET')return;S.trans=[];save();render();toast('Catatan pembelian direset ke 0');}
+document.getElementById('cariProduk').addEventListener('input',render);
+document.getElementById('diskonEng').addEventListener('change',render);
+document.getElementById('uang').addEventListener('input',render);
+document.getElementById('barcode').addEventListener('keydown',e=>{if(e.key==='Enter'){let v=e.target.value.trim().toUpperCase();let p=S.produk.find(x=>x.id===v||x.nama.toUpperCase().includes(v));if(p)add(p.id,1,p.nama,p.harga);else alert('Kode tidak ditemukan');e.target.value='';}});
+document.querySelectorAll('#cats button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#cats button').forEach(x=>x.classList.remove('on'));b.classList.add('on');cat=b.dataset.c;render();});
+render();
+</script></body></html>
