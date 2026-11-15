@@ -1,0 +1,19 @@
+{
+  "name": "PAO AND BREW - Kasir",
+  "short_name": "PAO AND BREW",
+  "description": "Aplikasi Kasir PAO AND BREW",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFF8EE",
+  "theme_color": "#0F3D2E",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
